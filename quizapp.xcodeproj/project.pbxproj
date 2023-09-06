@@ -16,6 +16,7 @@
 		FEB544EA2AA89D8900CB9850 /* quizappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB544E92AA89D8900CB9850 /* quizappTests.swift */; };
 		FEB544F42AA89D8900CB9850 /* quizappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB544F32AA89D8900CB9850 /* quizappUITests.swift */; };
 		FEB544F62AA89D8900CB9850 /* quizappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB544F52AA89D8900CB9850 /* quizappUITestsLaunchTests.swift */; };
+		FEB545032AA8D50E00CB9850 /* QuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB545022AA8D50E00CB9850 /* QuestionStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FEB544EF2AA89D8900CB9850 /* quizappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quizappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB544F32AA89D8900CB9850 /* quizappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizappUITests.swift; sourceTree = "<group>"; };
 		FEB544F52AA89D8900CB9850 /* quizappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEB545022AA8D50E00CB9850 /* QuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FEB544DB2AA89D8900CB9850 /* Assets.xcassets */,
 				FEB544DD2AA89D8900CB9850 /* LaunchScreen.storyboard */,
 				FEB544E02AA89D8900CB9850 /* Info.plist */,
+				FEB545022AA8D50E00CB9850 /* QuestionStruct.swift */,
 			);
 			path = quizapp;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB545032AA8D50E00CB9850 /* QuestionStruct.swift in Sources */,
 				FEB544D72AA89D8700CB9850 /* ViewController.swift in Sources */,
 				FEB544D32AA89D8700CB9850 /* AppDelegate.swift in Sources */,
 				FEB544D52AA89D8700CB9850 /* SceneDelegate.swift in Sources */,

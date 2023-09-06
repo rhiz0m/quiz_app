@@ -19,12 +19,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-tn-yxS">
                                 <rect key="frame" x="10" y="109" width="377" height="659"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KwN-iY-WZc">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwN-iY-WZc">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="488.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Welcome to The Quiz game! Press the Button &quot;True&quot; when you are ready  to play!">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="18" name="Futura-CondensedMedium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCX-1U-brm">
@@ -37,6 +43,9 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressedTrueBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lh5-uu-qMd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgS-Pg-Nt7">
                                         <rect key="frame" x="0.0" y="585" width="377" height="50"/>
@@ -48,8 +57,11 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressedFalseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mHe-LQ-cDC"/>
+                                        </connections>
                                     </button>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-Ib-ez6">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-Ib-ez6">
                                         <rect key="frame" x="0.0" y="655" width="377" height="4"/>
                                     </progressView>
                                 </subviews>
@@ -73,6 +85,7 @@
                     </view>
                     <connections>
                         <outlet property="falseBtn" destination="WgS-Pg-Nt7" id="KKb-Eb-OGd"/>
+                        <outlet property="progressBar" destination="GFO-Ib-ez6" id="ehb-gl-3sb"/>
                         <outlet property="questionTextFeild" destination="KwN-iY-WZc" id="2Mb-zj-wpb"/>
                         <outlet property="trueBtn" destination="BCX-1U-brm" id="vEb-hS-UK3"/>
                     </connections>
@@ -83,9 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
