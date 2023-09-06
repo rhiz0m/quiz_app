@@ -11,6 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var questionTextFeild: UITextView!
     
+    @IBOutlet weak var trueBtn: UIButton!
+    
+    @IBOutlet weak var falseBtn: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

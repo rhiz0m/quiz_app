@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-tn-yxS">
-                                <rect key="frame" x="10" y="59" width="377" height="759"/>
+                                <rect key="frame" x="10" y="109" width="377" height="659"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KwN-iY-WZc">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="582.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="488.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -28,28 +28,35 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCX-1U-brm">
-                                        <rect key="frame" x="0.0" y="582.66666666666663" width="377" height="50"/>
+                                        <rect key="frame" x="0.0" y="488.66666666666663" width="377" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="J9F-5C-aIs"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="True"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="True">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgS-Pg-Nt7">
-                                        <rect key="frame" x="0.0" y="679" width="377" height="50"/>
+                                        <rect key="frame" x="0.0" y="585" width="377" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="u82-gz-GWE"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="False"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="False">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                        </buttonConfiguration>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w99-Yb-i9G">
-                                        <rect key="frame" x="-2" y="729" width="381" height="31"/>
-                                    </slider>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-Ib-ez6">
+                                        <rect key="frame" x="0.0" y="655" width="377" height="4"/>
+                                    </progressView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="GFO-Ib-ez6" firstAttribute="top" secondItem="WgS-Pg-Nt7" secondAttribute="bottom" constant="20" id="HSj-z3-nnw"/>
                                     <constraint firstItem="KwN-iY-WZc" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="SXl-JA-H5y"/>
-                                    <constraint firstItem="w99-Yb-i9G" firstAttribute="top" secondItem="WgS-Pg-Nt7" secondAttribute="bottom" constant="1.1368683772161603e-13" id="Zay-Qe-hpT"/>
+                                    <constraint firstItem="GFO-Ib-ez6" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="hwe-kE-w5L"/>
                                     <constraint firstItem="WgS-Pg-Nt7" firstAttribute="top" secondItem="BCX-1U-brm" secondAttribute="bottom" constant="46.333333333333144" id="vBL-24-mt6"/>
                                 </constraints>
                             </stackView>
@@ -57,15 +64,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8wm-tn-yxS" secondAttribute="bottom" id="0KR-om-rn5"/>
-                            <constraint firstItem="8wm-tn-yxS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KMN-bD-mYy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8wm-tn-yxS" secondAttribute="bottom" constant="50" id="0KR-om-rn5"/>
+                            <constraint firstItem="8wm-tn-yxS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="KMN-bD-mYy"/>
                             <constraint firstItem="8wm-tn-yxS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="OsL-hO-qCK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8wm-tn-yxS" secondAttribute="trailing" constant="-10" id="khg-09-fxy"/>
                             <constraint firstItem="8wm-tn-yxS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sPq-oq-aFF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="falseBtn" destination="WgS-Pg-Nt7" id="KKb-Eb-OGd"/>
                         <outlet property="questionTextFeild" destination="KwN-iY-WZc" id="2Mb-zj-wpb"/>
+                        <outlet property="trueBtn" destination="BCX-1U-brm" id="vEb-hS-UK3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -79,6 +88,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
