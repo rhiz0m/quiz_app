@@ -9,6 +9,6 @@ import Foundation
 
 struct QuestionStruct {
 let question: String
-let answer: Bool
+let answer: String
 }
 
