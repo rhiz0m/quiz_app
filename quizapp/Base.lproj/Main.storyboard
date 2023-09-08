@@ -33,6 +33,12 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Quiz game! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgD-BB-PIb">
+                                        <rect key="frame" x="0.0" y="350" width="377" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-gf-WNR">
                                         <rect key="frame" x="0.0" y="469" width="377" height="50"/>
                                         <constraints>
@@ -66,9 +72,12 @@
                                     <constraint firstItem="KwN-iY-WZc" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="SXl-JA-H5y"/>
                                     <constraint firstItem="Esc-e5-vKL" firstAttribute="top" secondItem="I2E-gf-WNR" secondAttribute="bottom" constant="50" id="YGe-O9-kUj"/>
                                     <constraint firstAttribute="bottom" secondItem="GFO-Ib-ez6" secondAttribute="bottom" id="e0i-35-XHQ"/>
+                                    <constraint firstItem="ZgD-BB-PIb" firstAttribute="top" secondItem="KwN-iY-WZc" secondAttribute="bottom" id="gkX-Xt-xY8"/>
                                     <constraint firstItem="GFO-Ib-ez6" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="hwe-kE-w5L"/>
                                     <constraint firstItem="GFO-Ib-ez6" firstAttribute="top" secondItem="Esc-e5-vKL" secondAttribute="bottom" constant="30" id="jIp-PE-6Af"/>
                                     <constraint firstItem="GFO-Ib-ez6" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="kUq-aE-B6M"/>
+                                    <constraint firstItem="I2E-gf-WNR" firstAttribute="top" secondItem="ZgD-BB-PIb" secondAttribute="bottom" constant="98.670000000000002" id="mmh-Bq-Tpj"/>
+                                    <constraint firstItem="ZgD-BB-PIb" firstAttribute="centerX" secondItem="8wm-tn-yxS" secondAttribute="centerX" id="v0W-1S-Pqs"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -85,6 +94,7 @@
                     <connections>
                         <outlet property="FalseBtn" destination="Esc-e5-vKL" id="UZd-gW-Xpq"/>
                         <outlet property="TrueBtn" destination="I2E-gf-WNR" id="M0w-Gt-k8z"/>
+                        <outlet property="feedbackLabel" destination="ZgD-BB-PIb" id="zc1-pO-G6O"/>
                         <outlet property="progressBar" destination="GFO-Ib-ez6" id="ehb-gl-3sb"/>
                         <outlet property="questionTextFeild" destination="KwN-iY-WZc" id="2Mb-zj-wpb"/>
                     </connections>

@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  quizapp
 //
@@ -15,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var FalseBtn: UIButton!
     
+    @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
     let questions = [
@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         
     ]
     
-    var currentQuestionIndex = 0 // Variabel för att hålla reda på nuvarande f
+    var currentQuestionIndex = 0 // Variabel för att hålla reda på nuvarande fråga
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,58 +43,78 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        questionTextFeild.text = questions[currentQuestionIndex].question
+        if currentQuestionIndex < questions.count {
+           questionProgress()
+        } else {
+            reStartGame()
+        }
     }
-
-
-
     
+    func reStartGame() {
+        currentQuestionIndex = 0
+        endGameMessage() // Visa "Thanks for playing!" meddelandet
+        questionProgress()
+
+    }
     
-    
+    func endGameMessage() {
+        questionTextFeild.isHidden = true
+        feedbackLabel.text = "Thanks for playing!"
+        feedbackLabel.isHidden = false
+        
+        // Dölj meddelandet efter en viss tid (t.ex. 2 sekunder)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.feedbackLabel.isHidden = true
+            self.questionTextFeild.isHidden = false
+        }
+    }
     
     func questionProgress() {
-        
         if currentQuestionIndex < questions.count {
             let quiz = questions[currentQuestionIndex]
-            questionTextFeild.text = "\(currentQuestionIndex). \(quiz.question)\n"
+            questionTextFeild.text = "\(currentQuestionIndex + 1). \(quiz.question)\n"
             
-            let progress = Float(currentQuestionIndex) / Float(questions.count)
+            let progress = Float(currentQuestionIndex + 1) / Float(questions.count)
             progressBar.progress = progress
         } else {
             // Alla frågor har besvarats, du kan göra något här om du vill
             questionTextFeild.text = "Game is over"
+            feedbackLabel.isHidden = false
+            print("The Game is over")
         }
     }
-    
+
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
     
-
         if let usersAnswer = sender.titleLabel?.text { // Hämta texten från titleLabel
             let actualAnswer = questions[currentQuestionIndex].answer
             
             if usersAnswer == actualAnswer {
-                print("Right answer")
+                
+                feedbackLabel.text = "You got it right!"
                 print(usersAnswer)
                 print(actualAnswer)
                 
             } else {
+                feedbackLabel.text = "Nope...wrong answer..."
                 print("Wrong answer")
                 print(usersAnswer)
                 print(actualAnswer)
             
             }
-            currentQuestionIndex += 1
-            questionProgress()
-            updateUI()
-      
-            
-           
-        } else {
-            questionTextFeild.text = "Game is over"
-            currentQuestionIndex = 0
-        }
+            if currentQuestionIndex < questions.count {
+                
+                currentQuestionIndex += 1
+                updateUI()
+            }
         
+        } else {
+            //questionTextFeild.text = "Game is over"
+            feedbackLabel.text = "The Game is Over!"
+           
+       
+        }
         
     }
 }
